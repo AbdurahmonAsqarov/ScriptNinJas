@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*::after,*::before,*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+.bg{
+    background: url('./assets/Group.png');
+    background-repeat: no-repeat;
+}
+html{
+    scroll-behavior: smooth;
+ }
+.heh::before{
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    background-color: #000;
+    margin-left: auto;
+    transition: 0.5s;
+    margin-bottom: 3px;
+    /* background-color: ; */
+}
+.heh::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    display: block;
+    margin-right: auto;
+    transition: 0.5s;
+    margin-top: 3px;
+}
+.heh:hover::before{
+    width: 100%;
+}
+.heh:hover::after{
+    width: 100%;
+}
+.bgGrowth{
+    background: url(./assets/Objects2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.gg{
+    background: url(./assets/gg.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.log{
+    background: url(./assets/loginBg.jpg);
+    background-repeat: no-repeat;
+    height: 89vh;
+    width: 100vw;
+    background-size: cover;
+}
+.contact2{
+    backdrop-filter: blur(20px);
+  }
+.bg_1{
+    height: 41vh;
+    margin-top: -50px;
+  
+}
+.bg2{
+    margin-top: -50px;
+}
+  
