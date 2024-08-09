@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Tick from '../../../assets/Tick.png'
 import buss from '../../../assets/bussines.jpg'
 import Main from '../main/Main'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -33,7 +34,9 @@ const Header = () => {
             </h2>
           </motion.h2>
           <motion.button animate={{y:0}} initial={{y:500}} transition={{delay:1.8}}>
-            <button className='mt-[4vh] px-[2vh] h-[7vh] rounded-[9px] text-white text-xl bg-[#00a2b7] hover:bg-[#78c2cd98] hover:shadow-lg'>Akkaunt yaratish</button>
+            <NavLink to='/Login'>
+              <button className='mt-[4vh] px-[2vh] h-[7vh] rounded-[9px] text-white text-xl bg-[#00a2b7] hover:bg-[#78c2cd98] hover:shadow-lg'>Akkaunt yaratish</button>
+            </NavLink>
           </motion.button>
           </div>
         </motion.div>
