@@ -36,8 +36,8 @@ const IshgaJoy = () => {
   };
 
   return (
-    <div className='h-[80vh] '>
-      <div className='flex justify-center mt-[30vh]'>
+    <div className='h-[80vh] log'>
+      <div className='flex justify-center pt-[30vh]'>
         <button onClick={ClickTest} className='py-[20px] px-[60px] bg-[#00a7b2] text-white font-bold text-xl rounded-xl'>
           Test
         </button>
@@ -45,7 +45,7 @@ const IshgaJoy = () => {
 
       <div>
         {test ? (
-          <div className="flex items-center justify-center my-[20px] gap-10">
+          <div className="flex items-center justify-center my-[20px] gap-10 ">
               <button 
                 className='py-[20px] px-[70px] bg-[#00a7b2] text-white font-bold text-xl rounded-xl'
                 onClick={() => fetchPythonData(1)}>
