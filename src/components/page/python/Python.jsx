@@ -44,6 +44,8 @@ const PythonPage = () => {
   const pythonData = JSON.parse(localStorage.getItem('data')); // Retrieve the data from localStorage
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState([]); // State to hold all answers
+  const [showCard, setShowCard] = useState(true); // State to control the visibility of the card
+  const [finished, setFinished] = useState(false); // State to check if quiz is finished
 
   if (!pythonData || pythonData.length === 0) {
     return <div className="text-center text-gray-500 my-[43vh]">No data available</div>;
@@ -55,8 +57,13 @@ const PythonPage = () => {
     if (currentQuestionIndex < pythonData.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      submitAnswers(); // If it's the last question, submit all the answers
+      setFinished(true); // Mark as finished if it's the last question
     }
+  };
+
+  const handleFinalClick = () => {
+    submitAnswers(); // Submit the answers
+    setShowCard(false); // Hide the card
   };
 
   const submitAnswers = async () => {
@@ -88,10 +95,27 @@ const PythonPage = () => {
 
   return (
     <div className="container mx-auto p-4 overflow-hidden">
-      <QuestionCard
-        questionData={pythonData[currentQuestionIndex]}
-        onAnswerSelect={handleAnswerSelect}
-      />
+      {showCard && !finished && (
+        <QuestionCard
+          questionData={pythonData[currentQuestionIndex]}
+          onAnswerSelect={handleAnswerSelect}
+        />
+      )}
+      {finished && showCard && (
+        <div className="text-center">
+          <button
+            onClick={handleFinalClick}
+            className="mt-6 w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+          >
+            Yopish
+          </button>
+        </div>
+      )}
+      {!showCard && (
+        <div className="text-center my-[43vh]">
+          <h1 className="text-2xl font-bold">So'rovingiz muvaffaqqiyatli yuboridi!</h1>
+        </div>
+      )}
     </div>
   );
 };
